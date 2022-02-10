@@ -1,0 +1,36 @@
+service: localstack-tutorial
+
+frameworkVersion: "3"
+
+plugins:
+  - serverless-localstack
+  - serverless-python-requirements
+
+provider:
+  name: aws
+  runtime: python3.8
+
+functions:
+  get:
+    handler: src/functions/hello_world.handler
+    events:
+      - http:
+          path: hello-world
+          method: get
+          cors: true
+
+  post:
+    handler: src/functions/add.handler
+    events:
+      - http:
+          path: add
+          method: post
+          cors: true
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+
+  localstack:
+    stages:
+      - local
