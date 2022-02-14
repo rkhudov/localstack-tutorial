@@ -60,6 +60,21 @@ You should get:
 
 ### Deploy your service locally
 
+There are some ways to define configuration file for serverless.
+By serverless.yml, serverless.ts etc.
+
+If you are using serverless.ts file, you have to install additional npm packages by running:
+
+```
+npm install @serverless/typescript
+```
+
+```
+npm install --global ts-node
+```
+
+Deploy to serverless
+
 ```
 serverless deploy --stage local
 ```

@@ -32,5 +32,6 @@ custom:
     dockerizePip: non-linux
 
   localstack:
+    debug: true
     stages:
       - local
