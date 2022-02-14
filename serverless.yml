@@ -11,6 +11,9 @@ provider:
   runtime: python3.8
 
 functions:
+  auth:
+    handler: src/functions/auth.handler
+
   get:
     handler: src/functions/hello_world.handler
     events:
@@ -18,6 +21,9 @@ functions:
           path: hello-world
           method: get
           cors: true
+          authorizer:
+            name: auth
+            type: request
 
   post:
     handler: src/functions/add.handler
