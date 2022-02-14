@@ -23,6 +23,7 @@ functions:
           cors: true
           authorizer:
             name: auth
+            type: request
 
   post:
     handler: src/functions/add.handler
